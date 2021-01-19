@@ -155,21 +155,36 @@ Use the game function below to do the following:
 */
 
 
-function game(user, computer) {
-  
-
+let computerChoice = Math.random();
+if(computerChoice <= .34){
+  computerChoice = "scissors"
+}else if(computerChoice >.34 && computerChoice <= .67){
+  computerChoice = "paper"
+}else if(computerChoice >.67 && computerChoice <= 1){
+  computerChoice = "rock"
 }
 
 
 
+function game(user, computer) {
+  if(user === computer){
+return "it's a tie"
+  }else if( user === "paper" && computer === "rock"){
+    return "you win!"
+  }else if(user === "scissors" && computer === "paper"){
+   return "you win!"
+  }else if(user === "rock" && computer === "scissors"){
+    return "you win!"
+  }else if(user === "scissors" && computer === "rock"){
+    return "you lose!"
+  }else if(user === "rock" && computer === "paper"){
+    return "you lose!"
+  }else if(user === "paper" && computer === "scissors"){
+    return "you lose!"
+  }
+  
 
-
-
-
-
-
-
-
+}
 
 
 
@@ -189,19 +204,15 @@ Using the miles function below do the following:
 
 
 
-let miles = .0624 * 2
-
-
 
 
 
 function miles(km) {
- 
-  if(miles /2 = miles  ){
-    return miles
+ let calculation = km *.621371;
+ return calculation;
   }
-}
-console.log(miles(10))
+
+console.log(miles(10));
 
 
 //Task 5b - Feet to CM
@@ -212,11 +223,12 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet( /*add your code here*/ ) {
-  /*add your code here*/
+function feet(cm ) {
+  let calculation = cm / 30.48;
+  return calculation;
 }
 
-
+console.log(feet(20));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -228,11 +240,14 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong( /*add your code here*/ ) {
-  /*add your code here*/
+function annoyingSong(number) {
+  for(let i = 10; i > number; i-- ){
+return `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number -1} bottles of soda on the wall`
+
+}
 }
 
-
+console.log(annoyingSong(10));
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Grade Calculator
@@ -249,7 +264,17 @@ Using the grade function below do the following:
 */
 
 function grade(num) {
-
+if(num >= 90 && num <= 100){
+  return "you got an A"
+}else if(num >= 80 && num <= 89){
+  return "you got a B"
+}else if(num >= 70 && num <= 79){
+return "you got a C"
+}else if(num >= 60 && num <= 69){
+  return "you got a D"
+}else{
+  return "you got an F"
+}
 
 }
 
